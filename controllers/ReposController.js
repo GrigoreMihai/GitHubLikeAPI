@@ -25,11 +25,11 @@ const ReposController = {
     models
       .Repo
       .create({
-        firstName: body.firstName,
-        lastName: body.lastName,
+        name: body.name,
+        description: body.description,
       })
-      .then(user => {
-        return res.send(user);
+      .then(repo => {
+        return res.send(repo);
       });
   },
   update: (req, res) => {

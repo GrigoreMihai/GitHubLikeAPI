@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
-const router = require('./router.js');
-const routerRepos =require('./routerRepos.js');
+const port = 8000;
+const router = require('./routes/router.js');
+const routerRepos =require('./routes/routerRepos.js');
 const jsonParser = bodyParser.json();
 
 app.use(jsonParser);
