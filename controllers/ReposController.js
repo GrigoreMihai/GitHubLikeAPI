@@ -11,7 +11,7 @@ const ReposController = {
 				}
 
 				return res.send(data);
-			})
+			});
 	},
 	index: (req, res) => {
 		models

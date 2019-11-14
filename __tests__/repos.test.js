@@ -53,9 +53,7 @@ test("should  work post",  done => {
 			}    
 			if (response.statusCode !== 200) {
 				resolve(false);
-			}
-			// response.body = response.body[0];
-			
+			}			
 			resolve(response.body);
 		});
         
@@ -68,3 +66,36 @@ test("should  work post",  done => {
     
 
 });
+// test("should  work put",  done => {	  
+// 	const options = {
+// 		url: "http://localhost:8000/repos/3" ,
+// 		method: "put",
+// 		body : {
+// 			name: "MyRepo",
+// 			description: "Good code comments itself",
+// 			userEmail :"some@some.com"
+// 		},
+// 		json : true
+// 	}; 
+// 	let promise = new Promise((resolve,reject) => {
+// 		request(options, async function (error, response, body) {
+// 			if (error) {
+// 				resolve(false);
+// 			}
+// 			if ( typeof response === "undefined") {
+// 				resolve(false);
+// 			}    
+// 			if (response.statusCode !== 200) {
+// 				resolve(false);
+// 			}			
+// 			resolve(response.body);
+// 		});        
+// 	});
+// 	promise.then(body => {
+// 		console.log(body);
+// 		expect(body.name).toBe("MyRepo");
+// 		done();
+// 	});
+    
+
+// });
