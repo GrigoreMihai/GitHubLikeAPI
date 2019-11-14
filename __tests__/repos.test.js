@@ -37,10 +37,11 @@ test("should  work post",  done => {
 		url: "http://localhost:8000/repos" ,
 		method: "post",
 		body : {
-			"name": "MyRepo",
-			"description": "Good code comments itself",
-			"userEmail" :"some@some.com"
-		}
+			name: "MyRepo",
+			description: "Good code comments itself",
+			userEmail :"some@some.com"
+		},
+		json : true
 	}; 
 	let promise = new Promise((resolve,reject) => {
 		request(options, async function (error, response, body) {
@@ -53,9 +54,9 @@ test("should  work post",  done => {
 			if (response.statusCode !== 200) {
 				resolve(false);
 			}
-			body = body.toString( );
-			body = JSON.parse(body);
-			resolve(body);
+			// response.body = response.body[0];
+			
+			resolve(response.body);
 		});
         
 	});
